@@ -1,0 +1,122 @@
+
+
+{%extends "base.html" %}
+{% set title = 'Experience' %}
+{% block extra_css %}
+<link rel="stylesheet" href="{{url_for('static' , filename = 'experience_styling.css')}}">
+{% endblock %}
+{%block content %}
+
+<!--<div class=" container my-5 " style="margin-left:200px;">-->
+<!--  <div class="row gy-5 " style=" margin-top:100px; display:block;">-->
+<!--    &lt;!&ndash; Card for "Senior Compliance Associate" at Amazon &ndash;&gt;-->
+<!--    <div class="col-md-6 mb-4" >-->
+<!--      <div class="card my_card_style h-100  ">-->
+<!--        <div class="card-body d-flex flex-column">-->
+<!--          <h5 class="card-title">Senior Compliance Associate</h5>-->
+<!--          <h6 class="card-subtitle mb-2 text-muted">Amazon, Gdansk, Poland (Aug 2021 - Present)</h6>-->
+<!--          <p class="card-text flex-grow-1">-->
+<!--            - Reviewed and assessed product documentation for compliance with regulations.<br>-->
+<!--            - Ensured accurate classification of products based on regulatory guidelines.<br>-->
+<!--            - Improved workflows by collaborating with internal teams on documentation needs.<br>-->
+<!--            - Resolved compliance issues, enhancing problem-solving and analytical skills.-->
+<!--          </p>-->
+<!--          <a href="#" class="btn btn-primary mt-auto">Learn more</a>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+
+<!--    &lt;!&ndash; Card for "Customer Support Technician" at Pirlo Business Consultants &ndash;&gt;-->
+<!--    <div class="col-md-6 mb-4">-->
+<!--      <div class="card h-100 my_card_style">-->
+<!--        <div class="card-body d-flex flex-column">-->
+<!--          <h5 class="card-title">Customer Support Technician</h5>-->
+<!--          <h6 class="card-subtitle mb-2 text-muted">Pirlo Business Consultants, Beirut, Lebanon (May 2018 - Feb 2020)</h6>-->
+<!--          <p class="card-text flex-grow-1">-->
+<!--            - Assisted customers with technical troubleshooting via phone, email, and chat.<br>-->
+<!--            - Collaborated with team members to resolve complex technical issues.<br>-->
+<!--            - Built positive customer relationships through high-quality service.-->
+<!--          </p>-->
+<!--          <a href="#" class="btn btn-primary mt-auto">Learn more</a>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+
+<!--    &lt;!&ndash; Card for "IT Technical Support Intern" at South Lebanon Water Est. &ndash;&gt;-->
+<!--    <div class="col-md-6 mb-4">-->
+<!--      <div class="card h-100 my_card_style">-->
+<!--        <div class="card-body d-flex flex-column">-->
+<!--          <h5 class="card-title">IT Technical Support Intern</h5>-->
+<!--          <h6 class="card-subtitle mb-2 text-muted">South Lebanon Water Est., Saida, Lebanon (Jul 2019 - Oct 2019)</h6>-->
+<!--          <p class="card-text flex-grow-1">-->
+<!--            - Provided help desk support for basic IT issues.<br>-->
+<!--            - Performed system maintenance and software installations.<br>-->
+<!--            - Assisted with network setups and system upgrades.-->
+<!--          </p>-->
+<!--          <a href="#" class="btn btn-primary mt-auto">Learn more</a>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+
+<!--    &lt;!&ndash; Card for "Sales and Public Relations" at Aswak Leb &ndash;&gt;-->
+<!--    <div class="col-md-6 mb-4">-->
+<!--      <div class="card h-100 my_card_style">-->
+<!--        <div class="card-body d-flex flex-column">-->
+<!--          <h5 class="card-title">Sales and Public Relations</h5>-->
+<!--          <h6 class="card-subtitle mb-2 text-muted">Aswak Leb, Tyre, Lebanon (Jul 2017 - May 2018)</h6>-->
+<!--          <p class="card-text flex-grow-1">-->
+<!--            - Built strong communication and client management skills.<br>-->
+<!--            - Addressed customer inquiries with tailored solutions.<br>-->
+<!--            - Enhanced company visibility via social media engagement.-->
+<!--          </p>-->
+<!--          <a href="#" class="btn btn-primary mt-auto">Learn more</a>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
+
+      <div class="container">
+         <div class="card__container">
+            <article class="card__article">
+               <img src="static/amazon-logo.png" alt="image" class="card__img">
+
+               <div class="card__data">
+                  <span class="card__description">Amazon</span>
+                  <h2 class="card__title">Senior Compliance Associate Aug 2021 - present</h2>
+                  <a href="#" class="card__button">Read More</a>
+               </div>
+            </article>
+
+            <article class="card__article">
+               <img src="static/customer_support.jpg" alt="image" class="card__img" style="">
+
+               <div class="card__data">
+                  <span class="card__description">Pirlo Business Consultants</span>
+                  <h2 class="card__title">Customer Support Technician May 2018 - Feb 2020</h2>
+                  <a href="#" class="card__button">Read More</a>
+               </div>
+            </article>
+
+            <article class="card__article">
+               <img src="static/technical.jpg" alt="image" class="card__img" style="">
+
+               <div class="card__data">
+                  <span class="card__description">South Lebanon Water Est.</span>
+                  <h2 class="card__title">IT Technical Support Intern Jul 2019 - Oct 2019</h2>
+                  <a href="#" class="card__button">Read More</a>
+               </div>
+            </article>
+
+            <article class="card__article">
+               <img src="static/sales.jpg" alt="image" class="card__img" style="height:100%;">
+
+               <div class="card__data">
+                  <span class="card__description">Aswak Leb</span>
+                  <h2 class="card__title">Sales and Public Relations Jul 2017 - May 2018</h2>
+                  <a href="#" class="card__button">Read More</a>
+               </div>
+            </article>
+         </div>
+      </div>
+{%endblock %}

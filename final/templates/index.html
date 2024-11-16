@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+{% set title = 'Portfolio' %}
+
+{% block extra_css %}
+        <link rel="stylesheet" href="{{url_for('static' , filename = 'style.css')}}">
+{% endblock %}
+{%block content %}
+<!--    <nav class="navbar">-->
+<!--        <a href="#" class = "logo">Portfolio</a>-->
+<!--        <ul>-->
+<!--            <li><a href="#">Skills</a></li>-->
+<!--            <li><a href="">Education</a></li>-->
+<!--            <li><a href="{{url_for('experience_view')}}">Experience</a></li>-->
+<!--        </ul>-->
+
+<!--    </nav>-->
+    <div class="bars-animation">
+        <div class="bar" style="--i:6"></div>
+        <div class="bar" style="--i:5"></div>
+        <div class="bar" style="--i:4"></div>
+        <div class="bar" style="--i:3"></div>
+        <div class="bar" style="--i:2"></div>
+        <div class="bar" style="--i:1"></div>
+
+    </div>
+    <section class="home">
+        <div  class="home-info">
+            <h1>Hussein Farhat</h1>
+            <h2>
+                <span style="--i:4" data-text="Python and Flask skills">Python and Flask skills</span>
+                <span style="--i:3" data-text="customer service background">customer service background</span>
+                <span style="--i:2" data-text="IT knowledge">IT knowledge</span>
+                <span style="--i:1" data-text="Passion for learning">Passion for learning </span>
+            </h2>
+            <p id="summary"> Hi there! I'm an aspiring IT enthusiast with a growing passion for Technology. I've always been so interested in computers and programming in general, and this interest has lead me down the path of starting my PYTHON learning journey.
+                While I’m just starting out, I’ve already developed foundational skills in Python and am currently diving deeper into web development with Flask. My journey includes learning both frontend and backend concepts, and I'm excited to bring my projects to life with Python and Flask.
+                This website is a space where I share my progress, showcase small projects, and the skills I’m building along the way. I may not have a lot of experience yet, but I’m continuously expanding my knowledge and taking on new challenges to make my mark in the tech industry.
+                Thanks for stopping by—I’m excited to connect and share this adventure with you! </p>
+            <div class="btn-sci">
+                <a href="static/H.F_cv.pdf" class="btn">Download CV</a>
+                <div class="sci">
+                    <a href=""><i class='bx bxl-gitlab' ></i></a>
+                    <a href=""><i class='bx bxl-linkedin' ></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="home-img">
+            <div class="img-box">
+                <div class="img-item">
+                    <img src="static/peakpx.jpg" alt="background image">
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+<section class="feedback-section" style="background-image: url('static/laptop.jpg');">
+    <div class="feedback-container">
+        {% for user_feedback in feedback %}
+        <div class="feedback-card">
+            <h3 class="feedback-name">{{ user_feedback.name }}</h3>
+<!--            <p class="feedback-email">{{ user_feedback.email }}</p>-->
+            {% if user_feedback.rating %}
+                <div class="feedback-rating">
+                    {% for i in range(1, 6) %}
+                        {% if i <= user_feedback.rating %}
+                            <span class="star filled">★</span>
+                        {% else %}
+                            <span class="star empty">☆</span>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+                {% endif %}
+                <p class="feedback-text">{{ user_feedback.text }}</p>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+
+
+{%endblock %}

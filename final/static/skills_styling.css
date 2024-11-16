@@ -1,0 +1,89 @@
+ body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f4f8;
+      color: #333;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    h1 {
+      color: #333;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 20px;
+      font-size: 2em;
+    }
+
+    /* Skills Container */
+    .skills-container {
+      position: relative;
+      width: 100%;
+      height: 70vh;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      overflow: visible;
+    }
+
+    /* Bubble styling */
+    .bubble {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #4b6584;
+      color: #fff;
+      width: 120px;
+      height: 120px;
+      border-radius: 50%; /* Makes bubbles round */
+      font-size: 18px;
+      font-weight: bold;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      cursor: pointer;
+      transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+      position: absolute; /* Positioning to randomize placements */
+        animation: shine 2s infinite alternate;
+
+    }
+
+ @keyframes shine {
+     0% {
+         box-shadow: 0 0 8px rgba(255, 255, 255, 0.2);
+     }
+     100% {
+         box-shadow: 0 0 12px rgba(255, 255, 255, 0.6);
+     }
+ }
+
+
+
+    /* Hover effect */
+    .bubble:hover {
+      transform: scale(1.3);
+      background-color: #3867d6;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Random positioning of bubbles */
+    .bubble:nth-child(1) { top: 20%; left: 10%; }
+    .bubble:nth-child(2) { top: 50%; left: 30%; }
+    .bubble:nth-child(3) { top: 70%; left: 20%; }
+    .bubble:nth-child(4) { top: 40%; left: 60%; }
+    .bubble:nth-child(5) { top: 10%; left: 80%; }
+    .bubble:nth-child(6) { top: 60%; left: 70%; }
+    .bubble:nth-child(7) { top: 30%; left: 50%; }
+    .bubble:nth-child(8) { top: 80%; left: 40%; }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .bubble {
+        width: 90px;
+        height: 90px;
+      }
+    }

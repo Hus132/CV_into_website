@@ -1,0 +1,19 @@
+ {% extends 'base.html' %}
+
+    {% block extra_css %} {% endblock %}
+ {% block content %}
+        <div class="balance-card card text-center p-3 mb-2 bg-dark text-white">
+        <div class="card-header">
+            Account Balance
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">$<span id="balance">{{ balance }}</span></h5>
+            <a href="{{ url_for('balance_view') }}" class="btn btn-primary">Manage Balance</a>
+        </div>
+        <div class="card-footer text-muted">
+            Last updated just now
+        </div>
+    </div>
+
+{% endblock %}
+

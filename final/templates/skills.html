@@ -1,0 +1,46 @@
+{%extends "base.html" %}
+{% set title = 'Skills' %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{{url_for('static' , filename = 'skills_styling.css')}}">
+{% endblock %}
+
+{% block content %}
+
+<!--  <div class="skills-container">-->
+<!--    &lt;!&ndash; Add skills as individual bubbles &ndash;&gt;-->
+<!--    <div class="bubble">HTML</div>-->
+<!--    <div class="bubble">CSS</div>-->
+<!--    <div class="bubble">Flask</div>-->
+<!--    <div class="bubble">Linux</div>-->
+<!--    <div class="bubble">Windows</div>-->
+<!--    <div class="bubble">Python</div>-->
+<!--    <div class="bubble">Networking Basics</div>-->
+<!--    <div class="bubble">SQL</div>-->
+<!--    <div class="bubble">Teamwork</div>-->
+<!--    <div class="bubble">Problem-solving</div>-->
+<!--    <div class="bubble">Attention to Detail</div>-->
+<!--    <div class="bubble">Communication</div>-->
+<!--&lt;!&ndash;    <div class="bubble"></div>&ndash;&gt;-->
+<!--&lt;!&ndash;    <div class="bubble"></div>&ndash;&gt;-->
+<!--&lt;!&ndash;    <div class="bubble"></div>&ndash;&gt;-->
+<!--&lt;!&ndash;    <div class="bubble"></div>&ndash;&gt;-->
+<!--    &lt;!&ndash; Add more bubbles as needed &ndash;&gt;-->
+<!--  </div>-->
+
+
+<div class="skills-container">
+    <div class="bubble" style="top: 10%; left: 10%;">HTML</div>
+    <div class="bubble" style="top: 20%; left: 30%;">CSS</div>
+    <div class="bubble" style="top: 40%; left: 15%;">Flask</div>
+    <div class="bubble" style="top: 15%; left: 60%;">Linux</div>
+    <div class="bubble" style="top: 60%; left: 80%;">Windows</div>
+    <div class="bubble" style="top: 50%; left: 50%;">Python</div>
+    <div class="bubble" style="top: 30%; left: 75%;">Networking Basics</div>
+    <div class="bubble" style="top: 70%; left: 40%;">SQL</div>
+    <div class="bubble" style="top: 45%; left: 10%;">Teamwork</div>
+    <div class="bubble" style="top: 55%; left: 25%;">Problem-solving</div>
+    <div class="bubble" style="top: 25%; left: 90%;">Attention to Detail</div>
+    <div class="bubble" style="top: 65%; left: 60%;">Communication</div>
+</div>
+{%endblock %}

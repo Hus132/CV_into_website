@@ -1,0 +1,419 @@
+
+/*body{*/
+/*    background-image: url('back.jpg'); !* URL path to your image *!*/
+/*    background-size: cover; !* Makes the image cover the entire page *!*/
+/*    background-position: center; !* Centers the image *!*/
+/*    background-repeat: no-repeat;*/
+/*}*/
+
+
+
+
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+.navbar{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 60px;
+    padding: 30px 2%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    z-index: 100;
+    visibility: hidden;
+    opacity:0;
+    animation: show_content 1.5s linear forwards;
+    animation-delay: 1.2s;
+}
+@keyframes show_content{
+    100%{
+        visibility:visible;
+        opacity:1;
+    }
+}
+
+
+
+.navbar .logo {
+    font-size: 30px;
+    font-weight: 700;
+    margin-right: 500px;
+}
+
+.navbar ul {
+    list-style-type: none;
+    display: flex;
+
+}
+
+.navbar ul li{
+    list-style: none;
+    margin-left: 30px;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 500;
+    transition: 0.5s;
+}
+
+.navbar ul li a:hover {
+    color: greenyellow;
+}
+.home{
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    padding: 60px 9% 0;
+    gap:100px;
+    color: white;
+    visibility: hidden;
+    opacity:0;
+    animation: show_content 1.5s linear forwards;
+    animation-delay: 1.6s;
+}
+.home-info h1{
+    font-size: 55px;
+}
+.home-info h2{
+    display:inline-block;
+    font-size: 35px;
+    margin-top: 30px;
+}
+
+.home-info p {
+    font-size: 20px;
+    margin:10px 0 25px;
+}
+
+.home-info .btn-sci {
+    display: flex;
+    align-items: center;
+}
+
+.home .btn {
+    display: inline-block; /*this places items in this class side by side*/
+    padding: 10px 30px;
+    background: darkgreen;
+    border: 2px solid green;
+    border-radius: 50px; /* curves the edges of the button*/
+    box-shadow: 0 0 10px  green;
+    font-size:16px;
+    color: #fafafa;
+    font-weight: 700 !important;
+    transition: .5s;
+}
+
+.btn:hover {
+    background:transparent;
+    color: lawngreen;
+    border-color: lawngreen;
+    box-shadow: none;
+
+}
+
+.home-info .btn-sci .sci{
+    margin-left: 25px;
+}
+
+.home-info .btn-sci .sci a{
+    display: inline-flex;
+    padding: 8px;
+    border: 2px solid yellowgreen;
+    border-radius: 50px;
+    font-size: 22px;
+    color:greenyellow;
+    margin:0 8px;
+    transition: 0.5s;
+}
+.home-info .btn-sci .sci a:hover{
+    background: lawngreen;
+    color: #333333;
+    box-shadow: 0 0 10px  green;
+}
+
+.home-img .img-box {
+    width: 32vw;
+    height: 32vw;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative; /* Allows .img-item to position absolutely inside */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+}
+
+.home-img .img-box::before,
+.home-img .img-box::after{ /* Targets ::before of .img-box inside .home-img */
+    content: '';  /* Adds empty content to make ::before visible */
+    position: absolute;  /* Positions it absolutely in relation to .img-box */
+    width: 650px;  /* Sets width to 650px */
+    height: 650px;  /* Sets height to 650px */
+    background: conic-gradient(transparent, transparent, transparent, lawngreen);  /* Adds a circular gradient background */
+    transform: rotate(0deg);
+    animation: rotate_border 10s linear infinite;
+}
+
+.home-img .img-box::after {
+    animation-delay: -5s;
+}
+@keyframes rotate_border{
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+.home-img .img-box .img-item {
+    width: 100%; /* Adjust to control the size of the inner circle */
+    height: 100%; /* Keep this equal to width for a perfect circle */
+    background: #333333;
+    border-radius: 50%;
+    position: relative; /* Positions it over .img-box */
+    top: 50%; /* Center horizontally and vertically */
+    left: 50%;
+    transform: translate(-50%, -50%); /* Perfect centering */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; /* Ensures the image is contained within the inner circle */
+    z-index: 1;
+    border: .1px solid #333333;
+}
+
+.home-img .img-box .img-item img {
+    width: 99%;
+    height: 99%;
+    top: 30px;
+    object-fit: cover; /* Keeps image aspect ratio */
+    border-radius: 50%; /* Ensures the image is also circular */
+    display: block;
+    mix-blend-mode: lighten;
+}
+
+/*.bars-animation{*/
+/*    position:absolute;*/
+/*    width: 100%;*/
+/*    height: 100%;*/
+/*    display: flex;*/
+/*    z-index: -1;*/
+/*    !*visibility: collapse;*!*/
+/*    !*background-image: url('back.jpg'); !* Use your image as the background *!*!*/
+/*    !*background-size: cover; !* Ensures it covers the whole viewport *!*!*/
+/*    !*background-position: center; !* Centers the image *!*!*/
+/*    !*background-repeat: no-repeat; !* Prevents the image from repeating *!*!*/
+/*     !* Keeps it behind other elements *! !* Apply any animations *!*/
+/*}*/
+/*.bars-animation .bar{*/
+/*    width: 100%;*/
+/*    height:100%;*/
+/*    background: #333333;*/
+/*    !*z-index: -1;*!*/
+/*    transform: translateY(-100%);*/
+/*    animation: show-bars .5s ease-in-out forwards;*/
+/*    animation-delay: calc(.2s * var(--i));*/
+/*}*/
+/*@keyframes  show-bars {*/
+/*    100%{*/
+/*        transform: translateY(0%);*/
+
+/*    }*/
+
+/*}*/
+
+.home-info h2 span{
+    position: relative;
+    display: inline-block;
+    color: transparent;
+    font-size: 27px;
+    -webkit-text-stroke:.7px lawngreen;
+    animation: display-text 16s linear infinite;
+    animation-delay: calc(-4s * var(--i));
+}
+@keyframes display-text {
+    25%,100%{display: none;}
+}
+.home-info h2 span::before{
+    content:attr(data-text);
+    position:absolute;
+    width:0;
+    border-right:2px solid lawngreen;
+    color: lawngreen;
+    white-space: nowrap;
+    overflow:hidden;
+    animation: fill-text 4s linear infinite;
+}
+
+@keyframes fill-text {
+    10%, 100%{
+        width: 0;
+}
+    70%, 90%{
+        width: 100%;
+    }
+}
+
+.bars-animation {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    /*background-image: url('wallpaper.jpg'); !* Background image for the whole viewport *!*/
+    background-size: cover; /* Cover the viewport */
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 0;
+    animation: background-zoom 20s linear infinite; /* Apply the background animation */
+}
+
+/* Animation for zooming the background image */
+@keyframes background-zoom {
+    0%, 100% {
+        transform: scale(1); /* Start and end at the original size */
+    }
+    50% {
+        transform: scale(1.05); /* Slightly zoom in the middle of the animation */
+    }
+}
+
+/*.bars-animation .bar {*/
+/*    width: 100%;*/
+/*    height: 100%;*/
+/*    background-color: rgba(45, 51, 42, 0.3); !* Partially transparent to show background image *!*/
+/*    transform: translateY(-100%); !* Initial position for animation *!*/
+/*    animation: show-bars 0.5s ease-in-out forwards;*/
+/*    animation-delay: calc(0.2s * var(--i)); !* Staggered delay for each bar *!*/
+/*}*/
+
+@keyframes show-bars {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(0%);
+    }
+}
+
+
+
+/* css for the feedback section : */
+
+
+.feedback-section {
+    padding: 2rem;
+
+    text-align: center;
+    background-color:transparent;
+}
+
+.feedback-section h2 {
+    font-size: 2rem;
+    color: #333;
+
+    margin-bottom: 1.5rem;
+}
+
+/* Container for Feedback Cards */
+.feedback-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* Individual Feedback Card Styling */
+.feedback-card {
+    background-color: whitesmoke;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid #dddddd;
+    margin: 50px;
+    align-items: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    opacity: 0.7;
+}
+
+.feedback-card:hover {
+    transform: translateY(-5px);  /* Moves the card slightly upwards by 5 pixels to create a "lift" effect */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);  /* Adds a shadow below the card, making it look like it’s lifted off the page */
+    cursor: pointer;  /* Changes the cursor to a pointer (hand icon) to indicate that the card is clickable */
+    opacity: 1; /* Ensures full visibility; can be adjusted if you want hover to change visibility */
+}
+
+/* Feedback Card Content */
+.feedback-name {
+    border: green;
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 0.3rem;
+
+}
+
+.feedback-email {
+    font-size: 0.875rem;
+    color: #888;
+    margin-bottom: 1rem;
+}
+
+.feedback-text {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.5;
+}
+
+/* Styling for Feedback Cards with Rating */
+.feedback-rating {
+    gap: 0.25rem;
+    margin-top: 0.1rem;
+    position: relative;
+
+}
+
+.star {
+    font-size: 1.25rem;
+    color: #ffd700; /* Gold color for stars */
+}
+
+.star.empty {
+    color: #ccc; /* Light gray for empty stars */
+}
+
+#summary{
+    font-size: 17px;
+}
+
+/*.home-info p {*/
+/*    !*display: inline-block; !* Allows the width to change dynamically *!*!*/
+/*    white-space: nowrap;   !* Prevent the text from wrapping *!*/
+/*    width: 0;              !* Start with no width *!*/
+/*    animation: show_text 4s linear infinite; !* Adjust duration as needed *!*/
+/*}*/
+
+/*@keyframes show_text {*/
+/*    0% {*/
+/*        width: 0;   !* Start with no width *!*/
+/*    }*/
+/*    100% {*/
+/*        width: 100%; !* End with full width, matching the container's width *!*/
+/*    }*/
+/*}*/
+
+
+
+
+
+
+
+

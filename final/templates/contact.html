@@ -1,0 +1,24 @@
+{%extends "base.html" %}
+{% set title = 'contact' %}
+{% block extra_css %}
+<link rel="stylesheet" href="{{url_for('static' , filename = 'contact_styling.css')}}">
+{% endblock %}
+
+{%block content%}
+<div class="contact-container">
+    <form action="" class="contact-left">
+        <div class="contact-left-title">
+            <h2>Get in touch</h2>
+            <hr>
+        </div>
+        <input type="text" name="name" placeholder="your name" class="contact-inputs" required>
+        <input type="email" name="email" placeholder="your email" class="contact-inputs" required>
+        <textarea name="message"  placeholder="your message" class="contact-inputs "></textarea>
+        <button type="submit">Submit</button>
+    </form>
+    <div class="contact-right">
+<!--        <img src="static/contact_us.jpg" alt="" style="z-flex=-1;">-->
+    </div>
+
+</div>
+{%endblock content %}
