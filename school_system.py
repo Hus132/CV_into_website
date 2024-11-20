@@ -159,10 +159,6 @@ while True:
             last_name=input("enter the last name of the homeroom teacher")
             display_lead_students(first_name,last_name)
 
-
-
-
-
     # Handle the 'end' command
     elif command == 'end':
         print("Exiting the program. Goodbye!")
@@ -172,7 +168,3 @@ while True:
     else:
         print("Invalid command. Please try again.")
 
-# print(student_list,teacher_list,homeroom_teacher_list)
-
-
-#use a list instead of a dictionary since dictionaries do not accept dupliacates.
