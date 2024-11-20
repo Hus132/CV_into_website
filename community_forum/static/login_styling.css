@@ -1,0 +1,22 @@
+body {
+    background-image: url('city_wallpaper.jpg'); /* URL path to your image */
+    background-size: cover; /* Makes the image cover the entire page */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+.container form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top:300px;
+}

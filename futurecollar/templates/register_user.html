@@ -1,0 +1,15 @@
+{%extends 'base.html' %}
+{% set title = 'Change Password' %}
+{%block content %}
+
+    <h1>Register user</h1>
+
+<form action="{{url_for('register_view')  }}" method = "POST">
+    <p>Email:</p>
+    <input name="email" type="text"><br>
+    <p>Password:</p>
+    <input name="password" type="password">
+    <input type="submit">
+
+</form>
+{% endblock %}

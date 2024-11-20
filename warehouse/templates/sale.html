@@ -1,5 +1,10 @@
 {% extends 'base.html' %}
 {% set title ='Sale' %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{{url_for('static' , filename = 'form_styling.css')}}">
+{%endblock %}
+
 {% block content %}
 
 <div class="container mt-5">
@@ -23,8 +28,5 @@
             </form>
         </div>
     </div>
-               <a class="link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover" href="{{url_for('sale_view')}}">
-  Back to main page
-            </a>
 </div>
 {% endblock %}

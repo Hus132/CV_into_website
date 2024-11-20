@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{ set title = 'Contact Us' %}
+
+
+{% block content %}
+<div class="d-flex justify-content-center align-items-center" style="height: 100vh; margin: 0;">
+       <form action="" class="border p-4 shadow-lg rounded">
+            <div class="form-group">
+                <div class="row" >
+                    <div class="col">
+                        <label for="first_name" class="form-label">{{contact.first_name.label}}<br></label>
+                        {{contact.first_name(size = 32)}}
+
+<!--                        <label for="last_name" class="form-label ">{{contact.email.label}}<br></label>-->
+                    </div>
+                    <div class="col">
+                        <label for="last_name" class="form-label ">{{contact.last_name.label}}<br></label>
+                        {{contact.last_name()}}
+<!--                        {{contact.email()}}-->
+                    </div>
+                    <div>
+                        <label for="email" class="form-label ">{{contact.email.label}}<br></label>
+                        {{contact.email()}}
+                    </div>
+                </div>
+            </div>
+        </form>
+</div>
+
+
+
+{% endblock %}

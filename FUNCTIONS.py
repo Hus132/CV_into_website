@@ -1,48 +1,32 @@
-# names=["Hussein","Monika","Ahmed"]
-# newlist=[]
-# bin=[]
-# for x in names:
-#     if "a" in x:
-#         newlist.append(x)
-#     else:
-#         bin.append(x)
-#
-# print(f"The list with the names that contain the letter A is {newlist} and the list with all the other name is {bin}")
-# somelist=["Poland","France","Sweden","Denmark"]
-# another_list=[]
-#
-# bin=[x for x in somelist if "d"in x]
-# print(bin)
-# somelist.sort()
-# print(somelist)
+users_list = []
 
-# #how to copy a list to another .
-# Occupation=["Farmer","Engineer","Doctor","Mechanic"]
-# empty_list=[]
-# empty_list=Occupation.copy()
-# print(empty_list)
+# Use a loop to allow input for multiple users
+while True:
+    # Create an empty dictionary for each user
+    user_data = {}
 
-#declatig dictionaries
+    # Take input for first name
+    first_name = input("Please enter the first name: ")
 
-# d={"Hussein":"Compliance","Ahmed":"IT Engineer","Monika":"Sales"}
-# print(d["Hussein"])
-# print(len(d))
-# mylist=[]
-# for x in range(0,10):
-#     if x %2==0:
-#         mylist.append(x)
-# mx={"Hussein":"Compliance","Ahmed":"IT Engineer","numbers":mylist}
-# print(mx)
-# mx["cars"]=["ford","BMW","Mercedes"]
-# print(mx)
-# print((mx["cars"]))
-#
-# print(mx.items())
-# l=[1,2,3]
-# print(sum(l))
-# print(sum(l))
-# l.clear()
-# print(l)
+    # Take input for age and convert to an integer
+    age = int(input("Please enter the age: "))
 
-set1={1,2,3,4,3,6}
-print(set1)
+    # Store the data in the user dictionary
+    user_data['first_name'] = first_name
+    user_data['age'] = age
+
+    # Add the user data to the list of users
+    users_list.append(user_data)
+
+    # Ask if the user wants to continue entering data
+    continue_input = input("Do you want to add another user? (yes/no): ").lower()
+
+    # Break the loop if the user does not want to continue
+    if continue_input != 'yes':
+        break
+
+# Print the list of users
+print("User data saved for multiple users:")
+for user in users_list:
+    print(user)
+

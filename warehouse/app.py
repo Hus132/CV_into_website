@@ -1,5 +1,6 @@
 from flask import Flask, render_template,request,redirect,url_for,flash
 from flask_sqlalchemy import SQLAlchemy
+from .forms import ContactForm
 
 
 app = Flask(__name__)
@@ -24,6 +25,7 @@ class History(db.Model):
 with app.app_context():
     db.create_all()
 
+
 @app.route("/", methods = ['GET','POST'])
 def index_view():
     account = Account.query.first()
@@ -35,7 +37,7 @@ def index_view():
             return redirect(url_for('products_view'))
         else:
             flash('product cannot be found in inventory', category= 'warning')
-    return render_template('index.html',balance = balance)
+    return render_template('index.html', balance = balance)
 
 #Adding values entered by user to database.
 @app.route("/purchase", methods = ["GET", "POST"])
@@ -168,6 +170,11 @@ def products_view():
 def history_view():
     actions = History.query.all()
     return render_template('history.html',actions = actions)
+
+@app.route('/contact')
+def contact_view():
+    contact = ContactForm()
+    return render_template('contact.html',contact = contact)
 
 
 
